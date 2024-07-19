@@ -22,17 +22,6 @@ export const CoffeeCardContainer = styled.div`
       width: 7.5rem;
     }
 
-    & > span {
-      background-color: ${props => props.theme.product["yellow-light"]};
-      color: ${props => props.theme.product["yellow-dark"]};
-      padding: 4px 8px;
-      border-radius: 100px;
-
-      font-size: 0.625rem;
-      font-weight: bold;
-      line-height: 130%;
-    }
-
     & > h3 {
       font-family: "Baloo", sans-serif;
       font-size: 1.25rem;
@@ -53,28 +42,82 @@ export const CoffeeCardContainer = styled.div`
   & > footer {
     display: flex;
     justify-content: space-between;
-
-    & > div > input {
-      width: 2.5rem;
-    }
   }
 
 `
 
+export const TypesContainer = styled.div`
+  display: flex;
+  
+  & > span {
+    background-color: ${props => props.theme.product["yellow-light"]};
+    color: ${props => props.theme.product["yellow-dark"]};
+    padding: 4px 8px;
+    border-radius: 100px;
+    
+    
+    line-height: 130%;
+    margin-top: 7px;
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
+  `
+
 export const PriceContainer = styled.div`
   display: flex;
-  align-items: baseline;
-  gap: 5px;
+  align-items: center;
+  gap: 2px;
   font-weight: bold;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
+  color: ${props => props.theme.base["base-text"]};
 
   & > span {
-    font-size: 0.7rem;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 4px;
+  }
+`
+
+export const ShoppingControlsContainer = styled.div`
+  display: flex;
+  gap: 8px;
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  & > input[type="number"] {
+
+    width: 4.5rem;
+    height: 2.375rem;
+    border: none;
+    border-radius: 6px;
+    background-color: ${props => props.theme.base["base-button"]};
+    text-align: center;
+
+    font-size: 1rem;
+    line-height: 130%;
+    font-family: "Roboto";
     font-weight: 400;
   }
 `
 
 export const ShoppingCartButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: ${props => props.theme.product["purple-dark"]};
+  color: ${props => props.theme.base.white};
+  
+  width: 2.375rem;
+  padding: 8px;
   border-radius: 6px;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 0.3s;
+  }
 `

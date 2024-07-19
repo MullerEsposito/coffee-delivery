@@ -1,9 +1,13 @@
 import coffeeDeliveryBanner from "../../assets/coffee-delivery-banner.png";
-import { CoffeeCard } from "./CoffeeCard";
+import { Coffee, CoffeeCard } from "./CoffeeCard";
 import { GridIconInfo } from "./GridIconInfo";
 import { CoffeeCardsContainer, ContentBannerContainer, HomeContainer } from "./style";
 
+import { coffees as data } from "../../data/index.json";
+
 export function Home() {
+  const coffees = data as Coffee[];
+
   return (
     <HomeContainer>
       <div>
@@ -17,10 +21,17 @@ export function Home() {
         </div>
         <img src={coffeeDeliveryBanner} />
       </div>
+      
       <CoffeeCardsContainer>
         <h2>Nossos Cafés</h2>
-
-        <CoffeeCard />
+        <div>
+          {coffees.map(coffee => (
+            <CoffeeCard 
+              key={coffee.id}
+              coffee={coffee}
+            />
+          ))}
+        </div>
       </CoffeeCardsContainer>
     </HomeContainer>
   )

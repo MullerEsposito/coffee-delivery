@@ -1,16 +1,35 @@
 import { ShoppingCart } from "@phosphor-icons/react";
-import { CoffeeCardContainer, PriceContainer, ShoppingCartButtonContainer } from "./style";
+import { CoffeeCardContainer, PriceContainer, ShoppingCartButtonContainer, ShoppingControlsContainer, TypesContainer } from "./style";
 
-import coffee1 from "../../../assets/coffees/coffee1.png";
+import { InputNumber } from "./InputNumber";
 
-export function CoffeeCard() {
+type CoffeeTypes = "tradicional" | "com leite" | "gelado" | "especial";
+
+export type Coffee = {
+  id: string;
+  tags: CoffeeTypes[];
+  title: string;
+  description: string;
+  price: number;
+  image: string;
+}
+
+interface CoffeeCardProps {
+  coffee: Coffee;
+}
+
+export function CoffeeCard({ coffee: { tags, title, description, price, image }}: CoffeeCardProps) {
   return (
     <CoffeeCardContainer>
       <header>
-        <img src={coffee1} />
-        <span>Tradicional</span>
-        <h3>Expresso Tradicional</h3>
-        <p>O tradicional café feito com água quente e grãos moídos</p>
+        <img src={image} />
+        <TypesContainer>
+          {tags.map(tag => (
+            <span>{tag.toUpperCase()}</span>
+          ))}
+        </TypesContainer>
+        <h3>{ title }</h3>
+        <p>{ description }</p>
       </header>
 
       <footer>
@@ -18,15 +37,15 @@ export function CoffeeCard() {
           <span>
             R$
           </span>
-          9,90
+          {price.toFixed(2).replace(".", ",")}
         </PriceContainer>
         
-        <div>
-          <input type="number" defaultValue={0} />
+        <ShoppingControlsContainer>
+          <InputNumber min={0} />
           <ShoppingCartButtonContainer>
-            <ShoppingCart size={16} weight="fill" />
+            <ShoppingCart size={22} weight="fill" />
           </ShoppingCartButtonContainer>
-        </div>
+        </ShoppingControlsContainer>
       </footer>
     </CoffeeCardContainer>
   )
