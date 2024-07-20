@@ -11,8 +11,8 @@ export function GridIconInfo() {
         <ShoppingCart 
           size={32} 
           weight="fill"
-          color={theme.base.background}
-          style={{ backgroundColor: theme.product["yellow-dark"]}}
+          color={theme.colors.background}
+          style={{ backgroundColor: theme.colors["yellow-dark"]}}
         />
         <p>Simple and safe purchase</p>
       </IconInfoContainer>
@@ -20,8 +20,8 @@ export function GridIconInfo() {
         <Package 
           size={32} 
           weight="fill"
-          color={theme.base.background}
-          style={{ backgroundColor: theme.base["base-text"]}}
+          color={theme.colors.background}
+          style={{ backgroundColor: theme.colors["base-text"]}}
         />
         <p>Packaging keeps the coffee intact</p>
       </IconInfoContainer>
@@ -29,8 +29,8 @@ export function GridIconInfo() {
         <Timer 
           size={32} 
           weight="fill" 
-          color={theme.base.background}
-          style={{ backgroundColor: theme.product.yellow}}
+          color={theme.colors.background}
+          style={{ backgroundColor: theme.colors.yellow}}
         />
         <p>Fast and tracked delivery</p>
       </IconInfoContainer>
@@ -38,8 +38,8 @@ export function GridIconInfo() {
         <Coffee 
           size={32} 
           weight="fill" 
-          color={theme.base.background}
-          style={{ backgroundColor: theme.product.purple}}
+          color={theme.colors.background}
+          style={{ backgroundColor: theme.colors.purple}}
         />
         <p>The coffee arrives fresh to you</p>
       </IconInfoContainer>

@@ -16,13 +16,14 @@ export const LeftContainer = styled.div`
   gap: 0.75rem 0;
   width: 640px;
 `
-export const AddressSection = styled.section`
+
+const HeaderBase = styled.section`
   display: flex;
   flex-direction: column;
   gap: 2rem;
   padding: 2.5rem;
   background-color: ${props => props.theme.colors["base-card"]};
-  
+
   & > header {
     display: flex;
     gap: 8px;
@@ -36,11 +37,12 @@ export const AddressSection = styled.section`
       ${mixins.fonts.textS};
       color: ${props => props.theme.colors["base-text"]};
     }
-
-    & > svg {
-      fill: ${props => props.theme.colors["yellow-dark"]};
-      border-bottom: 2px solid ${props => props.theme.colors["yellow-dark"]};
-    }
+  }
+`
+export const AddressSection = styled(HeaderBase)`  
+  svg {
+    fill: ${props => props.theme.colors["yellow-dark"]};
+    border-bottom: 2px solid ${props => props.theme.colors["yellow-dark"]};
   }
 `
 export const Form = styled.form`
@@ -54,9 +56,10 @@ export const Form = styled.form`
   grid-gap: 16px 12px;
 `
 
-export const PaymentSection = styled.section`
-  padding: 2.5rem;
-  background-color: ${props => props.theme.colors["base-card"]};
+export const PaymentSection = styled(HeaderBase)`
+  svg {
+    fill: ${props => props.theme.colors.purple};
+  }
 `
 
 export const RightContainer = styled.div`

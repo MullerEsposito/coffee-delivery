@@ -108,7 +108,7 @@ export const ShoppingCartButtonContainer = styled.div`
   justify-content: center;
   align-items: center;
   background-color: ${props => props.theme.colors["purple-dark"]};
-  color: ${props => props.theme.base.white};
+  color: ${props => props.theme.colors.white};
   
   width: 2.375rem;
   padding: 8px;
