@@ -20,13 +20,13 @@ export const ActionsContainer = styled.div`
   & > div {
     display: flex;
     align-items: center;
-    background-color: ${props => props.theme.product["purple-light"]};
-    color: ${props => props.theme.product["purple-dark"]};
+    background-color: ${props => props.theme.colors["purple-light"]};
+    color: ${props => props.theme.colors["purple-dark"]};
     border-radius: 8px;
     padding: 8px;
 
     & > svg {
-      color: ${props => props.theme.product.purple};
+      color: ${props => props.theme.colors.purple};
     }
   }
 `
@@ -34,8 +34,8 @@ export const ActionsContainer = styled.div`
 export const ShoppingCartContainer = styled.a`
   display: flex;
   align-items: center;
-  background-color: ${props => props.theme.product["yellow-light"]};
-  color: ${props => props.theme.product["yellow-dark"]};
+  background-color: ${props => props.theme.colors["yellow-light"]};
+  color: ${props => props.theme.colors["yellow-dark"]};
   border-radius: 6px;
   padding: 8px;
 `

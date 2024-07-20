@@ -7,7 +7,7 @@ export const CoffeeCardContainer = styled.div`
   padding: 0 1.5rem 1.5rem 1.5rem;
   height: 19.375rem;
   width: 16rem;
-  background-color: ${ props => props.theme.base["base-card"]};
+  background-color: ${ props => props.theme.colors["base-card"]};
   border-radius: 6px 36px 6px 36px;
 
   & > header {
@@ -34,7 +34,7 @@ export const CoffeeCardContainer = styled.div`
       font-size: 0.875rem;
       line-height: 130%;
       font-weight: 400;
-      color: ${props => props.theme.base["base-label"]};
+      color: ${props => props.theme.colors["base-label"]};
     }
   }
 
@@ -49,8 +49,8 @@ export const TypesContainer = styled.div`
   display: flex;
   
   & > span {
-    background-color: ${props => props.theme.product["yellow-light"]};
-    color: ${props => props.theme.product["yellow-dark"]};
+    background-color: ${props => props.theme.colors["yellow-light"]};
+    color: ${props => props.theme.colors["yellow-dark"]};
     padding: 4px 8px;
     border-radius: 100px;
     
@@ -68,7 +68,7 @@ export const PriceContainer = styled.div`
   gap: 2px;
   font-weight: bold;
   font-size: 1.5rem;
-  color: ${props => props.theme.base["base-text"]};
+  color: ${props => props.theme.colors["base-text"]};
 
   & > span {
     font-size: 1rem;
@@ -93,7 +93,7 @@ export const ShoppingControlsContainer = styled.div`
     height: 2.375rem;
     border: none;
     border-radius: 6px;
-    background-color: ${props => props.theme.base["base-button"]};
+    background-color: ${props => props.theme.colors["base-button"]};
     text-align: center;
 
     font-size: 1rem;
@@ -107,7 +107,7 @@ export const ShoppingCartButtonContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${props => props.theme.product["purple-dark"]};
+  background-color: ${props => props.theme.colors["purple-dark"]};
   color: ${props => props.theme.base.white};
   
   width: 2.375rem;

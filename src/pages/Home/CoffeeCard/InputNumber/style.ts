@@ -10,7 +10,7 @@ export const Input = styled.input.attrs({ type: "number" })`
   height: 2.375rem;
   border: none;
   border-radius: 6px;
-  background-color: ${props => props.theme.base["base-button"]};
+  background-color: ${props => props.theme.colors["base-button"]};
   text-align: center;
 
   font-size: 1rem;
@@ -23,7 +23,7 @@ const Button = styled.button`
   width: 30px;
   height: 30px;
   background-color: #f2f2f2;
-  color: ${props => props.theme.product.purple};
+  color: ${props => props.theme.colors.purple};
   border: none;
   cursor: pointer;
   line-height: 30px;

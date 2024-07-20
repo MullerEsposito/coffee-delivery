@@ -19,7 +19,7 @@ export const HomeContainer = styled.main`
 
   & h2 {
     ${mixins.fonts.titleL};
-    color: ${props => props.theme.base["base-subtitle"]};
+    color: ${props => props.theme.colors["base-subtitle"]};
   }
 `
 
@@ -28,12 +28,12 @@ export const ContentBannerContainer = styled.div`
 
   & > h1 {
     ${mixins.fonts.titleXL};
-    color: ${props => props.theme.base["base-title"]};
+    color: ${props => props.theme.colors["base-title"]};
   }
 
   & > p {
     ${mixins.fonts.textL};
-    color: ${props => props.theme.base["base-title"]};
+    color: ${props => props.theme.colors["base-title"]};
     padding-top: 10px;
   }
 `
