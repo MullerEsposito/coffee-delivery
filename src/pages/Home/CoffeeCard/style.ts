@@ -4,7 +4,6 @@ export const CoffeeCardContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-top: 3.25rem;
   padding: 0 1.5rem 1.5rem 1.5rem;
   height: 19.375rem;
   width: 16rem;

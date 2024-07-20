@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { mixins } from "../../styles/mixins";
 
 export const HomeContainer = styled.main`
-  padding: 5.68rem 10rem;
+  padding: 5.68rem 0;
   font-family: "Roboto", sans-serif;
 
   & > div:first-child {
@@ -12,7 +12,9 @@ export const HomeContainer = styled.main`
   }
 
   & img {
-    overflow: auto;
+    max-width: 29.75rem; 
+    width: 29.75rem;
+    /* overflow: auto; */
   }
 
   & h2 {
@@ -43,7 +45,9 @@ export const CoffeeCardsContainer = styled.div`
 
   & > div {
     display: grid;
-    grid-template-columns: repeat(4, auto);
-    column-gap: 20px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: 2rem;
+    row-gap: 2rem;
+    margin-top: 3rem;
   }
 `

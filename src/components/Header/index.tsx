@@ -3,6 +3,7 @@ import { MapPin, ShoppingCart } from "@phosphor-icons/react"
 import coffeeLogo from "../../assets/coffee-delivery-logo.svg"
 import { ActionsContainer, HeaderContainer, LogoImg, ShoppingCartContainer } from "./style"
 import { useWeb3Modal, useWeb3ModalAccount } from "@web3modal/ethers5/react"
+import { Link } from "react-router-dom";
 
 
 export function Header() {
@@ -11,7 +12,9 @@ export function Header() {
 
   return (
     <HeaderContainer>
-      <LogoImg src={coffeeLogo} />
+      <Link to="/">
+        <LogoImg src={coffeeLogo} />
+      </Link>
       <ActionsContainer>
         <div>
           {isConnected ? (
@@ -24,9 +27,11 @@ export function Header() {
           <MapPin size={18} weight="fill" />
           Brussels, BE
         </div>
-        <ShoppingCartContainer>
-          <ShoppingCart size={18} weight="fill" />
-        </ShoppingCartContainer>
+        <Link to={`/checkout`}>
+          <ShoppingCartContainer>
+            <ShoppingCart size={18} weight="fill" />
+          </ShoppingCartContainer>
+        </Link>
       </ActionsContainer>
     </HeaderContainer>
   )
