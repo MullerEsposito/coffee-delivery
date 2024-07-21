@@ -69,6 +69,38 @@ export const RightContainer = styled.div`
   gap: 0.75rem 0;
 `
 export const OrderSection = styled.div`
+  display: flex;
+  flex-direction: column;
   padding: 2.5rem;
   background-color: ${props => props.theme.colors["base-card"]};
+  border-radius: 6px 44px 6px 44px;
+`
+
+export const ResumeOrder = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 12px;
+  margin-top: 2rem;
+  ${mixins.fonts.textS};
+
+
+  & span:nth-child(even) {
+    text-align: right;
+  }
+
+  & > span:nth-last-of-type(1),
+  & > span:nth-last-of-type(2) {
+    ${mixins.fonts.textL};
+    font-weight: bold;
+  }
+`
+
+export const OrderButton = styled.button`
+  flex: 1;
+  margin-top: 2rem;
+  padding: 12px 8px;
+  border-radius: 6px;
+  background-color: ${props => props.theme.colors.yellow};
+  ${mixins.fonts.buttonG};
+  color: ${props => props.theme.colors.white};
 `

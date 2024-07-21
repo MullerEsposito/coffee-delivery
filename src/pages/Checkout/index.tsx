@@ -1,9 +1,10 @@
 import { CurrencyDollar, MapPin } from "@phosphor-icons/react";
-import { AddressSection, CheckoutContainer, Form, LeftContainer, OrderSection, PaymentSection, RightContainer } from "./style";
+import { AddressSection, CheckoutContainer, Form, LeftContainer, OrderButton, OrderSection, PaymentSection, ResumeOrder, RightContainer } from "./style";
 import { InputForm } from "./InputForm";
 import { PayButtons } from "./PayButtons";
 import { PayButtonsContainer } from "./PayButtons/style";
 import { PayButton } from "./PayButtons/PayButton";
+import { CoffeeCard } from "./CoffeeCard";
 
 export function Checkout() {
   const renderAddressSection = () => (
@@ -58,7 +59,15 @@ export function Checkout() {
       <RightContainer>
         <h2>Cafés selecionados</h2>
         <OrderSection>
-          Dados do Pedido
+          <CoffeeCard />
+          <CoffeeCard />
+          <ResumeOrder>
+            <span>Total de itens</span> <span>R$ 29,70</span>
+            <span>Entrega</span> <span>R$ 3,50</span>
+            <span>Total</span> <span>R$ 33,20</span>
+          </ResumeOrder>
+
+          <OrderButton>CONFIRMAR PEDIDO</OrderButton>
         </OrderSection>
       </RightContainer>
     </CheckoutContainer>

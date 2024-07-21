@@ -1,7 +1,7 @@
 import { ShoppingCart } from "@phosphor-icons/react";
 import { CoffeeCardContainer, PriceContainer, ShoppingCartButtonContainer, ShoppingControlsContainer, TypesContainer } from "./style";
 
-import { InputNumber } from "./InputNumber";
+import { InputNumber } from "../../../components/InputNumber";
 
 type CoffeeTypes = "tradicional" | "com leite" | "gelado" | "especial";
 

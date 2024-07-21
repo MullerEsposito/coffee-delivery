@@ -3,16 +3,17 @@ import styled from "styled-components"
 export const InputNumberContainer = styled.div`
   display: flex;
   align-items: center;
+  border-radius: 6px;
+  overflow: hidden;
 `
 
 export const Input = styled.input.attrs({ type: "number" })`
   width: 4rem;
   height: 2.375rem;
   border: none;
-  border-radius: 6px;
   background-color: ${props => props.theme.colors["base-button"]};
   text-align: center;
-
+  padding-left: 10px;
   font-size: 1rem;
   line-height: 130%;
   font-family: "Roboto";
@@ -20,25 +21,26 @@ export const Input = styled.input.attrs({ type: "number" })`
 `
 
 const Button = styled.button`
-  width: 30px;
+  width: 20px;
   height: 30px;
-  background-color: #f2f2f2;
   color: ${props => props.theme.colors.purple};
   border: none;
   cursor: pointer;
-  line-height: 30px;
-  text-align: center;
   font-size: 1.5rem;
-  font-weight: 400;
   &:hover {
     opacity: 0.8;
   }
 `
 
 export const ButtonMinus = styled(Button)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 3px;
   z-index: 10;
   background: none;
-  margin-right: -25px;
+  margin-right: -22px;
+  font-size: 2.5rem;
 `
 
 export const ButtonPlus = styled(Button)`
