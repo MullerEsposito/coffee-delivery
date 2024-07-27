@@ -28,7 +28,7 @@ const Button = styled.button`
   cursor: pointer;
   font-size: 1.5rem;
   &:hover {
-    opacity: 0.8;
+    color: ${({ theme }) => theme.colors["purple-dark"]};
   }
 `
 

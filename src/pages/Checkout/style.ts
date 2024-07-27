@@ -9,7 +9,6 @@ export const CheckoutContainer = styled.div`
     ${mixins.fonts.titleXS};
   }
 `
-
 export const LeftContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -55,13 +54,11 @@ export const Form = styled.form`
   grid-template-columns: 12.5rem 1fr 3.75rem;
   grid-gap: 16px 12px;
 `
-
 export const PaymentSection = styled(HeaderBase)`
   svg {
     fill: ${props => props.theme.colors.purple};
   }
 `
-
 export const RightContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -75,7 +72,6 @@ export const OrderSection = styled.div`
   background-color: ${props => props.theme.colors["base-card"]};
   border-radius: 6px 44px 6px 44px;
 `
-
 export const ResumeOrder = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -94,7 +90,6 @@ export const ResumeOrder = styled.div`
     font-weight: bold;
   }
 `
-
 export const OrderButton = styled.button`
   flex: 1;
   margin-top: 2rem;
@@ -103,4 +98,9 @@ export const OrderButton = styled.button`
   background-color: ${props => props.theme.colors.yellow};
   ${mixins.fonts.buttonG};
   color: ${props => props.theme.colors.white};
+  transition: 0.3s;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors["yellow-dark"] };
+  }
 `

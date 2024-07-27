@@ -9,10 +9,19 @@ export const InputFormContainer = styled.div`
     border-radius: 4px;
     height: 2.625rem;
     width: 100%;
+    outline: none;
 
     padding: 12px;
 
     ${mixins.fonts.textS};
-    color: ${props => props.theme.colors["base-label"]};
+    color: ${props => props.theme.colors["base-text"]};    
+
+    &::placeholder {
+      color: ${props => props.theme.colors["base-label"]};
+    }
+
+    &:focus {
+      border: 1px solid ${props => props.theme.colors["yellow-dark"]};
+    }
   }
 `

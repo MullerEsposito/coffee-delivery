@@ -49,4 +49,9 @@ export const RemoveButton = styled.button`
   ${mixins.fonts.textXS};
   font-weight: 500;
   color: ${props => props.theme.colors["base-text"]};
+  transition: 0.3s;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors["base-hover"]};
+  }
 `
