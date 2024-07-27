@@ -5,6 +5,7 @@ import { PayButtons } from "./PayButtons";
 import { PayButtonsContainer } from "./PayButtons/style";
 import { PayButton } from "./PayButtons/PayButton";
 import { CoffeeCard } from "./CoffeeCard";
+import { Link } from "react-router-dom";
 
 export function Checkout() {
   const renderAddressSection = () => (
@@ -67,7 +68,9 @@ export function Checkout() {
             <span>Total</span> <span>R$ 33,20</span>
           </ResumeOrder>
 
-          <OrderButton>CONFIRMAR PEDIDO</OrderButton>
+          <Link to="/order/1/success">
+            <OrderButton>CONFIRMAR PEDIDO</OrderButton>
+          </Link>
         </OrderSection>
       </RightContainer>
     </CheckoutContainer>
