@@ -3,18 +3,8 @@ import { CoffeeCardContainer, PriceContainer, ShoppingCartButtonContainer, Shopp
 
 import { InputNumber } from "../../../components/InputNumber";
 import { useContext, useState } from "react";
-import { CartContext, CoffeeInCart } from "../../../contexts/CartContext";
-
-type CoffeeTypes = "tradicional" | "com leite" | "gelado" | "especial";
-
-export type Coffee = {
-  id: string;
-  tags: CoffeeTypes[];
-  title: string;
-  description: string;
-  price: number;
-  image: string;
-}
+import { CartContext } from "../../../contexts/CartContext";
+import { Coffee, CoffeeInCart } from "../../../@types/coffee";
 
 interface CoffeeCardProps {
   coffee: Coffee;
