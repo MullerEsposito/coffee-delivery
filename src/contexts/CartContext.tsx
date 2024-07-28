@@ -1,6 +1,7 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
 import { coffees as data } from "../data/index.json";
 import { Coffee, CoffeeInCart } from "../@types/coffee";
+import { produce } from "immer";
 
 interface CartContextType {
   coffees: Coffee[];
@@ -33,28 +34,33 @@ export function CartProvider({ children }: CartProviderProps) {
   }, [coffeesInCart])
 
   const addToCart = (coffee: CoffeeInCart) => {
-    setCoffeesInCart(old => {
-      const coffeeFound = old.find(({id}) => id === coffee.id);
-      
-      if (coffeeFound) { 
+    const coffeeIndexFound = coffeesInCart.findIndex(({id}) => id === coffee.id);
+    const isCoffeeExist = coffeeIndexFound >= 0;
+    
+    const nextState = produce(coffeesInCart, draft => {      
+      if (isCoffeeExist) { 
         if (coffee.quantity > 0) {
-          return old.map(coffeeOld => coffeeOld.id === coffee.id ? coffee : coffeeOld);
+          draft[coffeeIndexFound].quantity = coffee.quantity;
+        } else {
+          draft.splice(coffeeIndexFound, 1);
         }
-       return old.filter(coffeeOld => coffeeOld.id !== coffee.id);
-      } else {
-        return [...old, coffee];
       }
-    });
+    })
+
+    setCoffeesInCart(nextState);
   }
 
   const removeFromCart = (id: string) => {
-    setCoffeesInCart(olds => {
-      const coffeeFound = olds.find(old => old.id === id);
-      
-      if (coffeeFound)
-        return olds.filter(old => old.id !== id);
-      return olds;
-    });
+    const coffeeIndexFound = coffeesInCart.findIndex(coffee => coffee.id === id);
+    const isCoffeeExist = coffeeIndexFound >= 0;
+
+    const nextState = produce(coffeesInCart, draft => {
+      if (isCoffeeExist) { 
+        draft.splice(coffeeIndexFound, 1);      
+      }
+    })
+
+    setCoffeesInCart(nextState);
   }
 
   return (
