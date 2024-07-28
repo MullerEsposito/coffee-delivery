@@ -32,7 +32,7 @@ export const ActionsContainer = styled.div`
   }
 `
 interface ShoppingCartContainerProps {
-  coffeesQuantity: number;
+  coffees_quantity: number;
 }
 export const ShoppingCartContainer = styled.div<ShoppingCartContainerProps>`
   position: relative;
@@ -44,14 +44,14 @@ export const ShoppingCartContainer = styled.div<ShoppingCartContainerProps>`
   padding: 8px;
 
   &::after {
-    ${({ coffeesQuantity }) => coffeesQuantity && 
+    ${({ coffees_quantity }) => coffees_quantity && 
       css`
         position: absolute;
         top: -10px;
         right: -10px;
     
         ${mixins.fonts.textS};
-        content: "${coffeesQuantity}";
+        content: "${coffees_quantity}";
         display: flex;
         justify-content: center;
         align-items: center;

@@ -31,7 +31,7 @@ export function Header() {
           Brussels, BE
         </div>
         <Link to={`/checkout`}>
-          <ShoppingCartContainer coffeesQuantity={coffeesInCart.length}>
+          <ShoppingCartContainer coffees_quantity={coffeesInCart.length}>
             <ShoppingCart size={18} weight="fill" />
           </ShoppingCartContainer>
         </Link>
