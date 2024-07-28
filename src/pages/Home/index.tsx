@@ -1,13 +1,13 @@
+import { useContext } from "react";
 import coffeeDeliveryBanner from "../../assets/coffee-delivery-banner.png";
-import { Coffee, CoffeeCard } from "./CoffeeCard";
+import { CoffeeCard } from "./CoffeeCard";
 import { GridIconInfo } from "./GridIconInfo";
 import { CoffeeCardsContainer, ContentBannerContainer, HomeContainer } from "./style";
-
-import { coffees as data } from "../../data/index.json";
+import { CartContext } from "../../contexts/CartContext";
 
 export function Home() {
-  const coffees = data as Coffee[];
-
+  const { coffees } = useContext(CartContext);
+  
   return (
     <HomeContainer>
       <div>
