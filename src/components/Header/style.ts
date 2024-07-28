@@ -31,7 +31,7 @@ export const ActionsContainer = styled.div`
   }
 `
 
-export const ShoppingCartContainer = styled.a`
+export const ShoppingCartContainer = styled.div`
   display: flex;
   align-items: center;
   background-color: ${props => props.theme.colors["yellow-light"]};
