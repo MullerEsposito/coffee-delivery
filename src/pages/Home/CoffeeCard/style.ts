@@ -113,10 +113,10 @@ export const ShoppingCartButtonContainer = styled.div`
   width: 2.375rem;
   padding: 8px;
   border-radius: 6px;
+  transition: 0.3s;
 
   &:hover {
     cursor: pointer;
-    opacity: 0.8;
-    transition: 0.3s;
+    background-color: ${props => props.theme.colors.purple};
   }
 `
