@@ -2,11 +2,12 @@ import { InputHTMLAttributes, useState } from "react";
 import { ButtonMinus, ButtonPlus, Input, InputNumberContainer } from "./style";
 
 interface InputNumberProps extends InputHTMLAttributes<HTMLInputElement>{
-  getValue: (value: number) => void;
+  defaultValue?: number;
+  getValue?: (value: number) => void;
 }
 
-export function InputNumber({ min, getValue, ...props }: InputNumberProps) {
-  const [value, setValue] = useState(0);
+export function InputNumber({ min, getValue, defaultValue, ...props }: InputNumberProps) {
+  const [value, setValue] = useState(defaultValue || 0);
 
   const handleDecrement = () => {
     const hasMin = typeof min != "undefined";
@@ -17,7 +18,7 @@ export function InputNumber({ min, getValue, ...props }: InputNumberProps) {
     
     setValue(old => {
       const newValue = old -1;
-      getValue(newValue);
+      getValue && getValue(newValue);
       
       return newValue;
     });    
@@ -26,7 +27,7 @@ export function InputNumber({ min, getValue, ...props }: InputNumberProps) {
   const handleIncrement = () => {
     setValue(old => {
       const newValue = old + 1;
-      getValue(newValue);
+      getValue && getValue(newValue);
 
       return newValue;
     });
