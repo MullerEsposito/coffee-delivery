@@ -4,11 +4,14 @@ import coffeeLogo from "../../assets/coffee-delivery-logo.svg"
 import { ActionsContainer, HeaderContainer, LogoImg, ShoppingCartContainer } from "./style"
 import { useWeb3Modal, useWeb3ModalAccount } from "@web3modal/ethers5/react"
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../../contexts/CartContext";
 
 
 export function Header() {
   const { open } = useWeb3Modal();
-  const { address, chainId, isConnected } = useWeb3ModalAccount();
+  const { address, isConnected } = useWeb3ModalAccount();
+  const { coffeesInCart } = useContext(CartContext);
 
   return (
     <HeaderContainer>
@@ -28,7 +31,7 @@ export function Header() {
           Brussels, BE
         </div>
         <Link to={`/checkout`}>
-          <ShoppingCartContainer>
+          <ShoppingCartContainer coffeesQuantity={coffeesInCart.length}>
             <ShoppingCart size={18} weight="fill" />
           </ShoppingCartContainer>
         </Link>
