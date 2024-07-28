@@ -14,7 +14,6 @@ export const HomeContainer = styled.main`
   & img {
     max-width: 29.75rem; 
     width: 29.75rem;
-    /* overflow: auto; */
   }
 
   & h2 {
