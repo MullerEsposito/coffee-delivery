@@ -7,12 +7,7 @@ export const GridIconInfoContainer = styled.div`
   width: 35.4375rem;
   margin-top: 3rem;
 `
-
-interface IconInfoContainerProps {
-  "background-color": "yellow-dark" | "yellow" | "text" | "purple";
-}
-
-export const IconInfoContainer = styled.div<IconInfoContainerProps>`
+export const IconInfoContainer = styled.div`
   display: flex;
   gap: 12px;
   align-items: center;

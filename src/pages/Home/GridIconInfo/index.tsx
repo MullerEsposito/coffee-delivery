@@ -7,7 +7,7 @@ export function GridIconInfo() {
 
   return (
     <GridIconInfoContainer>
-      <IconInfoContainer background-color="yellow-dark">
+      <IconInfoContainer>
         <ShoppingCart 
           size={32} 
           weight="fill"
@@ -16,7 +16,7 @@ export function GridIconInfo() {
         />
         <p>Simple and safe purchase</p>
       </IconInfoContainer>
-      <IconInfoContainer background-color="yellow">
+      <IconInfoContainer>
         <Package 
           size={32} 
           weight="fill"
@@ -25,7 +25,7 @@ export function GridIconInfo() {
         />
         <p>Packaging keeps the coffee intact</p>
       </IconInfoContainer>
-      <IconInfoContainer background-color="text">
+      <IconInfoContainer>
         <Timer 
           size={32} 
           weight="fill" 
@@ -34,7 +34,7 @@ export function GridIconInfo() {
         />
         <p>Fast and tracked delivery</p>
       </IconInfoContainer>
-      <IconInfoContainer background-color="purple">
+      <IconInfoContainer>
         <Coffee 
           size={32} 
           weight="fill" 
