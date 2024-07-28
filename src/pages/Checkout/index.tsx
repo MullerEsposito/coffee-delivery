@@ -6,8 +6,19 @@ import { PayButtonsContainer } from "./PayButtons/style";
 import { PayButton } from "./PayButtons/PayButton";
 import { CoffeeCard } from "./CoffeeCard";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../../contexts/CartContext";
 
 export function Checkout() {
+  const { coffeesInCart } = useContext(CartContext);
+
+  const coffeesPriceReduced = coffeesInCart.reduce((prev, curr) => 
+    prev += (curr.quantity * curr.price)
+  , 0)
+  const deliverPrice = 3.50;
+  const orderPriceFinal = coffeesPriceReduced + deliverPrice;
+
+
   const renderAddressSection = () => (
     <>
       <h2>Complete seu pedido</h2>
@@ -60,12 +71,16 @@ export function Checkout() {
       <RightContainer>
         <h2>Cafés selecionados</h2>
         <OrderSection>
-          <CoffeeCard />
-          <CoffeeCard />
+          {coffeesInCart.map(coffeeInCart => (
+            <CoffeeCard 
+              coffeeInCart={coffeeInCart} 
+              key={coffeeInCart.id} 
+            />
+          ))}
           <ResumeOrder>
-            <span>Total de itens</span> <span>R$ 29,70</span>
-            <span>Entrega</span> <span>R$ 3,50</span>
-            <span>Total</span> <span>R$ 33,20</span>
+            <span>Total de itens</span> <span>R$ {coffeesPriceReduced.toFixed(2)}</span>
+            <span>Entrega</span> <span>R$ {deliverPrice.toFixed(2)}</span>
+            <span>Total</span> <span>R$ {orderPriceFinal.toFixed(2)}</span>
           </ResumeOrder>
 
           <Link to="/order/1/success">
