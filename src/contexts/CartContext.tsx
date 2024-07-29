@@ -44,9 +44,11 @@ export function CartProvider({ children }: CartProviderProps) {
         } else {
           draft.splice(coffeeIndexFound, 1);
         }
+      } else {
+        draft.push(coffee);
       }
     })
-
+    
     setCoffeesInCart(nextState);
   }
 
