@@ -2,7 +2,7 @@ import { MapPin, ShoppingCart } from "@phosphor-icons/react"
 
 import coffeeLogo from "../../assets/coffee-delivery-logo.svg"
 import { ActionsContainer, HeaderContainer, LogoImg, ShoppingCartContainer } from "./style"
-import { useWeb3Modal, useWeb3ModalAccount } from "@web3modal/ethers5/react"
+import { useWeb3Modal, useWeb3ModalAccount } from "@web3modal/ethers/react"
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../../contexts/CartContext";

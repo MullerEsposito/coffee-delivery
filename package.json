@@ -11,8 +11,8 @@
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.7",
-    "@web3modal/ethers5": "^5.0.6",
-    "ethers": "^5.7.2",
+    "@web3modal/ethers": "^6.0.0",
+    "ethers": "5.1.11",
     "immer": "^10.1.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
