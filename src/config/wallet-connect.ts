@@ -1,4 +1,4 @@
-import { createWeb3Modal, defaultConfig } from '@web3modal/ethers5/react'
+import { createWeb3Modal, defaultConfig } from '@web3modal/ethers/react'
 
 // 1. Your WalletConnect Cloud project ID
 const projectId = 'd44a1da28a3da571df4e0dd47c323655'
